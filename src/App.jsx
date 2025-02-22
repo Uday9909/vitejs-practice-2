@@ -1,21 +1,12 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-
-import Productcard from './components/productcard.jsx';
+import React from "react";
+import "./App.css";
+import Productcard from "./cart/productcard.jsx";
 
 function App() {
   const cards = Array.from({ length: 10 });
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '16px',
-    padding: '16px',
-  };
 
   return (
-    <div style={gridStyle}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 bg-gray-100 min-h-screen">
       {cards.map((_, index) => (
         <Productcard key={index} />
       ))}
